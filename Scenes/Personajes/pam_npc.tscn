@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8ts872jenslr"]
+
+[ext_resource type="Texture2D" uid="uid://b2flunyt5f5yb" path="res://Assest/Sprite_personajes/Recepcionista/pam mesa.png" id="1_okeyd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfrsq"]
+atlas = ExtResource("1_okeyd")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovnlt"]
+atlas = ExtResource("1_okeyd")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ut68"]
+atlas = ExtResource("1_okeyd")
+region = Rect2(3200, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shfn7"]
+atlas = ExtResource("1_okeyd")
+region = Rect2(4800, 0, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbf67"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfrsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovnlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ut68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shfn7")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 8.0
+}]
+
+[node name="pam_npc" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mbf67")
+animation = &"talk"
+frame_progress = 0.564461
