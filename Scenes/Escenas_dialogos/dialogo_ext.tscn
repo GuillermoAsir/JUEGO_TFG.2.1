@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqluoq8py1dip"]
+
+[ext_resource type="Script" uid="uid://bovkjiqcgfk0g" path="res://Scenes/Escenas_dialogos/dialogo_RRHH.gd" id="1_4k6rt"]
+[ext_resource type="Texture2D" uid="uid://ckm4yu1n0rtkj" path="res://Assest/Dialogos/box_diagols_rrhh.png" id="1_wtjsd"]
+
+[node name="Dialogo_RRHH" type="Node2D"]
+script = ExtResource("1_4k6rt")
+metadata/_edit_group_ = true
+
+[node name="BoxDiagolsRrhh" type="Sprite2D" parent="."]
+position = Vector2(960.5, 961.5)
+scale = Vector2(1.02623, 1.07658)
+texture = ExtResource("1_wtjsd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 233.0
+offset_top = 846.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 27
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerOcultar" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerOcultar" to="." method="_on_timer_ocultar_timeout"]
