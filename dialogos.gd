@@ -12,7 +12,7 @@ var mision_inicial_dialogs2 = [
 	"¡Perfecto! Has encontrado el archivo `IPS_Departamentos.txt`.\n" +
 	"Ahora falta un paso más: ver el contenido de dicho fichero.\n" +
 	"Para ello vas a usar el comando `cat` seguido del nombre del fichero,\n" +
-	"por ejemplo: `cat IPS_El_Bohío.txt`. ¡Vamos, usa a ese gatito!"
+	"por ejemplo: `cat IPS_Departamentos.txt`. ¡Vamos, usa a ese gatito!"
 ]
 
 var mision_inicial_dialogs3 = [
@@ -28,7 +28,7 @@ var mision_inicial_dialogs4 = [
 ]
 
 var mision_inicial_dialogs5 = [
-	"Inténtalo con el ping 192.168.10.1"
+	"Esa no es la ip que estás buscando, prueba con la 192.168.100.10"
 ]
 var mision_inicial_dialogs6 = [
 	"¡Por todos los nodos! Al router le pasa algo,\n" +

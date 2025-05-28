@@ -36,6 +36,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e2o6t")
 [node name="History" type="RichTextLabel" parent="Background/MarginContainer/Rows/GameInfo"]
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 scroll_following = true
 metadata/_edit_group_ = true

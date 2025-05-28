@@ -16,7 +16,7 @@ func _ready():
 			192.168.10.12   impresora_oficina
 			192.168.10.1  router_ventas
 
-			# Fin del archivo""")
+			""")
 	
 	
 func crear_estructura_directorios():
