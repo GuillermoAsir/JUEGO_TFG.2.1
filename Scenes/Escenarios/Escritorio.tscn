@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6rrjvfubobu8"]
+[gd_scene load_steps=7 format=3 uid="uid://c6rrjvfubobu8"]
 
 [ext_resource type="Texture2D" uid="uid://ckjrsu4f5ev1y" path="res://Assest/ESCENARIOS/Partes despacho/Escritorio_desktop.png" id="1_paq6n"]
 [ext_resource type="Texture2D" uid="uid://dwogaekx6j142" path="res://Assest/ESCENARIOS/Partes despacho/pantalla pc.png" id="2_7ruv4"]
 [ext_resource type="Script" uid="uid://c1wrswdnnkjsf" path="res://Scenes/Escenarios/cambiar_camara.gd" id="3_okcyh"]
+[ext_resource type="Script" uid="uid://dsheqqfxw6ylr" path="res://Scenes/Escenarios/cambiar_terminal.gd" id="4_od0to"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ruv4"]
-size = Vector2(30, 29)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okcyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrlio"]
+size = Vector2(49, 36)
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,11 +29,21 @@ position = Vector2(993, 307)
 zoom = Vector2(1.8, 1.99)
 limit_left = 0
 
-[node name="CambiarCamara" type="Area2D" parent="."]
+[node name="CambiarCamara" type="Area2D" parent="." node_paths=PackedStringArray("camara_lejos", "camara_cerca")]
 script = ExtResource("3_okcyh")
+camara_lejos = NodePath("../Camera_lejos")
+camara_cerca = NodePath("../Camera_cerca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CambiarCamara"]
 position = Vector2(1513, 59.5)
-shape = SubResource("RectangleShape2D_7ruv4")
+shape = SubResource("RectangleShape2D_okcyh")
 
-[connection signal="input_event" from="CambiarCamara" to="." method="_on_cambiar_camara_input_event"]
+[node name="CambiarTerminal" type="Area2D" parent="."]
+script = ExtResource("4_od0to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CambiarTerminal"]
+position = Vector2(493.5, 165)
+shape = SubResource("RectangleShape2D_lrlio")
+
+[connection signal="input_event" from="CambiarCamara" to="CambiarCamara" method="_on_input_event"]
+[connection signal="input_event" from="CambiarTerminal" to="CambiarTerminal" method="_on_input_event"]
