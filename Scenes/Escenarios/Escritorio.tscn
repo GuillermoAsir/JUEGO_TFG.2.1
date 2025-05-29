@@ -33,4 +33,4 @@ script = ExtResource("3_okcyh")
 position = Vector2(1513, 59.5)
 shape = SubResource("RectangleShape2D_7ruv4")
 
-[connection signal="input_event" from="CambiarCamara" to="CambiarCamara" method="_on_input_event"]
+[connection signal="input_event" from="CambiarCamara" to="." method="_on_cambiar_camara_input_event"]
