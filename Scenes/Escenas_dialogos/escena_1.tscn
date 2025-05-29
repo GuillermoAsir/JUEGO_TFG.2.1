@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c7kipmbf8pik1"]
+[gd_scene load_steps=37 format=3 uid="uid://c7kipmbf8pik1"]
 
 [ext_resource type="PackedScene" uid="uid://3f3o5soc7dvb" path="res://Scenes/Escenarios/pasillo.tscn" id="1_86l2f"]
 [ext_resource type="Texture2D" uid="uid://c17cxk5r7d1kg" path="res://Assest/Sprite_personajes/Rrhh/explosion_rrhh.png" id="2_0dlan"]
@@ -36,10 +36,14 @@ tracks/0/keys = {
 "values": [&"appear"]
 }
 
+[sub_resource type="Animation" id="Animation_pqo1f"]
+resource_name = "dialogo"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pqo1f"]
 _data = {
 &"Acto_rrhh": SubResource("Animation_86l2f"),
-&"RESET": SubResource("Animation_0dlan")
+&"RESET": SubResource("Animation_0dlan"),
+&"dialogo": SubResource("Animation_pqo1f")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyuwn"]
