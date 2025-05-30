@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cji6pw5mjes1q"]
+[gd_scene load_steps=49 format=3 uid="uid://cji6pw5mjes1q"]
 
 [ext_resource type="PackedScene" uid="uid://bjx04ojbedswp" path="res://Scenes/Escenarios/despacho.tscn" id="1_oncvu"]
 [ext_resource type="PackedScene" uid="uid://bxgeq48pyy3o" path="res://Scenes/NPC/viejo.tscn" id="2_71d0s"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cocj1a0wulsi1" path="res://Assest/Sprite_personajes/viejo/viejo_peo.png" id="8_4onwe"]
 [ext_resource type="Texture2D" uid="uid://ca4oolg30yrnn" path="res://Assest/Sprite_personajes/viejo/viejo_camina_1080.png" id="9_h7j14"]
 [ext_resource type="PackedScene" uid="uid://bt4donm85buni" path="res://Scenes/Escenas_dialogos/dialogo_viejo.tscn" id="10_kmvqj"]
+[ext_resource type="AudioStream" uid="uid://b5pxm4up6d735" path="res://Music/Music_escenarios/musica-despacho-8bit.mp3" id="11_4onwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akcg4"]
 size = Vector2(300, 1077)
@@ -549,6 +550,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_5o4b8")
 }
 autoplay = "habla_viejo"
+
+[node name="Musica-despacho-8Bit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_4onwe")
+volume_db = -21.835
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="VolverPasillo" to="VolverPasillo" method="_on_body_entered"]
 [connection signal="body_exited" from="VolverPasillo" to="VolverPasillo" method="_on_body_exited"]

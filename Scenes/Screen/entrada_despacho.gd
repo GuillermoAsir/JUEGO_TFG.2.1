@@ -15,12 +15,18 @@ func _ready():
 func _on_body_entered(body):
 	print("Body entró:", body.name)
 	if body.name == "chico":
-		label.show()
+		if label:
+			label.show()
+		else:
+			print("❌ No se puede mostrar el Label porque es nulo.")
 
 func _on_body_exited(body):
 	print("Body salió:", body.name)
 	if body.name == "chico":
-		label.hide()
+		if label:
+			label.hide()
+		else:
+			print("❌ No se puede ocultar el Label porque es nulo.")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
