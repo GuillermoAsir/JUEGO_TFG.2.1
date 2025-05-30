@@ -1,12 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://cji6pw5mjes1q"]
+[gd_scene load_steps=8 format=3 uid="uid://cji6pw5mjes1q"]
 
 [ext_resource type="PackedScene" uid="uid://bjx04ojbedswp" path="res://Scenes/Escenarios/despacho.tscn" id="1_oncvu"]
 [ext_resource type="PackedScene" uid="uid://bxgeq48pyy3o" path="res://Scenes/NPC/viejo.tscn" id="2_71d0s"]
+[ext_resource type="PackedScene" uid="uid://s5olytk7wmkw" path="res://Scenes/Personajes/chico.tscn" id="3_2e4kn"]
+[ext_resource type="Script" uid="uid://d28o2spsfa18k" path="res://Scenes/Screen/volver_pasillo.gd" id="4_2e4kn"]
+[ext_resource type="Script" uid="uid://bwwd677i67y55" path="res://Scenes/Screen/entrar_pc.gd" id="5_akcg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akcg4"]
+size = Vector2(300, 1077)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as1wr"]
+size = Vector2(373, 175)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(1920, 1080)
 
 [node name="Despacho" parent="." instance=ExtResource("1_oncvu")]
 position = Vector2(-9, 1)
 
 [node name="viejo_npc" parent="." instance=ExtResource("2_71d0s")]
 position = Vector2(49, 468)
+
+[node name="chico" parent="." instance=ExtResource("3_2e4kn")]
+position = Vector2(-545, -747)
+
+[node name="VolverPasillo" type="Area2D" parent="."]
+script = ExtResource("4_2e4kn")
+next_scene_path = "res://Scenes/Screen/Screen_pasillo.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VolverPasillo"]
+position = Vector2(1766, 533.5)
+shape = SubResource("RectangleShape2D_akcg4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="VolverPasillo"]
+
+[node name="Label" type="Label" parent="VolverPasillo/CanvasLayer"]
+offset_left = 3532.0
+offset_top = 1097.0
+offset_right = 3804.0
+offset_bottom = 1154.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.643137, 0, 0, 1)
+text = "PUSA E PARA VOLVER AL PASILLO"
+
+[node name="EntrarPC" type="Area2D" parent="."]
+script = ExtResource("5_akcg4")
+next_scene_path = "res://Scenes/Escenarios/Escritorio.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntrarPC"]
+position = Vector2(892.5, 362.5)
+shape = SubResource("RectangleShape2D_as1wr")
+
+[connection signal="body_entered" from="VolverPasillo" to="VolverPasillo" method="_on_body_entered"]
+[connection signal="body_exited" from="VolverPasillo" to="VolverPasillo" method="_on_body_exited"]
+[connection signal="body_entered" from="EntrarPC" to="EntrarPC" method="_on_body_entered"]
+[connection signal="body_exited" from="EntrarPC" to="EntrarPC" method="_on_body_exited"]

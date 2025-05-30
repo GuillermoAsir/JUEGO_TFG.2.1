@@ -1,12 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://bxgeq48pyy3o"]
+[gd_scene load_steps=37 format=3 uid="uid://bxgeq48pyy3o"]
 
 [ext_resource type="Script" uid="uid://6gpfp4fcbd2d" path="res://Scenes/NPC/viejo.gd" id="1_7j78g"]
 [ext_resource type="Texture2D" uid="uid://cocj1a0wulsi1" path="res://Assest/Sprite_personajes/viejo/viejo_peo.png" id="2_7j78g"]
 [ext_resource type="Texture2D" uid="uid://be5gtljpxb0w5" path="res://Assest/Sprite_personajes/viejo/viejo_reposo.png" id="2_tkx8n"]
 [ext_resource type="Texture2D" uid="uid://ca4oolg30yrnn" path="res://Assest/Sprite_personajes/viejo/viejo_camina_1080.png" id="3_tkx8n"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiyxs"]
-size = Vector2(327, 78)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j78g"]
 atlas = ExtResource("2_tkx8n")
@@ -245,10 +242,6 @@ animations = [{
 
 [node name="viejo_npc" type="CharacterBody2D"]
 script = ExtResource("1_7j78g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(199.5, 524)
-shape = SubResource("RectangleShape2D_xiyxs")
 
 [node name="animaciones" type="AnimatedSprite2D" parent="."]
 position = Vector2(118, 201)
