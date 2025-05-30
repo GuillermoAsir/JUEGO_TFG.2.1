@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cji6pw5mjes1q"]
+[gd_scene load_steps=48 format=3 uid="uid://cji6pw5mjes1q"]
 
 [ext_resource type="PackedScene" uid="uid://bjx04ojbedswp" path="res://Scenes/Escenarios/despacho.tscn" id="1_oncvu"]
 [ext_resource type="PackedScene" uid="uid://bxgeq48pyy3o" path="res://Scenes/NPC/viejo.tscn" id="2_71d0s"]
 [ext_resource type="PackedScene" uid="uid://s5olytk7wmkw" path="res://Scenes/Personajes/chico.tscn" id="3_2e4kn"]
 [ext_resource type="Script" uid="uid://d28o2spsfa18k" path="res://Scenes/Screen/volver_pasillo.gd" id="4_2e4kn"]
 [ext_resource type="Script" uid="uid://bwwd677i67y55" path="res://Scenes/Screen/entrar_pc.gd" id="5_akcg4"]
+[ext_resource type="Texture2D" uid="uid://h62rubenu6g3" path="res://Assest/ESCENARIOS/Partes despacho/Despacho_general.PNG" id="6_as1wr"]
+[ext_resource type="Texture2D" uid="uid://be5gtljpxb0w5" path="res://Assest/Sprite_personajes/viejo/viejo_reposo.png" id="7_cwuaf"]
+[ext_resource type="Texture2D" uid="uid://cocj1a0wulsi1" path="res://Assest/Sprite_personajes/viejo/viejo_peo.png" id="8_4onwe"]
+[ext_resource type="Texture2D" uid="uid://ca4oolg30yrnn" path="res://Assest/Sprite_personajes/viejo/viejo_camina_1080.png" id="9_h7j14"]
+[ext_resource type="PackedScene" uid="uid://bt4donm85buni" path="res://Scenes/Escenas_dialogos/dialogo_viejo.tscn" id="10_kmvqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akcg4"]
 size = Vector2(300, 1077)
@@ -12,16 +17,491 @@ size = Vector2(300, 1077)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as1wr"]
 size = Vector2(373, 175)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j78g"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(0, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkx8n"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(800, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiyxs"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(1600, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1no24"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(2400, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqkbi"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(3200, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mba8w"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(4000, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc3t2"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(4800, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuk6p"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(5600, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md8or"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(6400, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgnc1"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(7200, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vgr2"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(8000, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feolx"]
+atlas = ExtResource("7_cwuaf")
+region = Rect2(8800, 0, 800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnaff"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(0, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n0sh"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(900, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev3py"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(1800, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrak1"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(2700, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv458"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(3600, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfosc"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(4500, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojagy"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(5400, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwec3"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(6300, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya8oh"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(7200, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aln8y"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(8100, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojrjo"]
+atlas = ExtResource("8_4onwe")
+region = Rect2(9000, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qchjw"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(0, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f4iq"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(900, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdp2c"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(1800, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5axmh"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(2700, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5vf3"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(3600, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksidc"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(4500, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0qns"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(5400, 0, 900, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx82u"]
+atlas = ExtResource("9_h7j14")
+region = Rect2(6300, 0, 900, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6v8p6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j78g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkx8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiyxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1no24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqkbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mba8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc3t2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuk6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md8or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgnc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vgr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feolx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnaff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n0sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev3py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrak1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv458")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfosc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojagy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwec3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya8oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aln8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojrjo")
+}],
+"loop": false,
+"name": &"peo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qchjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f4iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdp2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5axmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5vf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksidc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0qns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx82u")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_f4pn5"]
+resource_name = "habla_viejo"
+length = 82.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("viejo_animado:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 79.3333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1232, 656), Vector2(1232, 656)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("viejo_animado:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.233334, 35.2333, 36.1667, 37.3333, 79.3333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"idle", &"idle", &"peo", &"idle", &"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("viejo_animado:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 78.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DespachoGeneral:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 78.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(954, 536), Vector2(954, 536), Vector2(954, 536)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DespachoGeneral:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 77.6333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Dialogo_viejo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 79.2333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-9, -6), Vector2(-9, -6)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dialogo_viejo:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 79.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DespachoGeneral:light_mask")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 77.6667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [32, 32]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DespachoGeneral:visibility_layer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 78.2667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [32, 32]
+}
+
+[sub_resource type="Animation" id="Animation_343r7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("viejo_animado:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1232, 656)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("viejo_animado:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("viejo_animado:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DespachoGeneral:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(954, 536)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DespachoGeneral:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Dialogo_viejo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, -6)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dialogo_viejo:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DespachoGeneral:light_mask")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DespachoGeneral:visibility_layer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5o4b8"]
+_data = {
+&"RESET": SubResource("Animation_343r7"),
+&"habla_viejo": SubResource("Animation_f4pn5")
+}
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(1920, 1080)
 
 [node name="Despacho" parent="." instance=ExtResource("1_oncvu")]
 position = Vector2(-9, 1)
 
+[node name="DespachoGeneral" type="Sprite2D" parent="."]
+light_mask = 32
+visibility_layer = 32
+position = Vector2(954, 536)
+texture = ExtResource("6_as1wr")
+
 [node name="viejo_npc" parent="." instance=ExtResource("2_71d0s")]
+visible = false
+light_mask = 64
+visibility_layer = 64
 position = Vector2(49, 468)
 
 [node name="chico" parent="." instance=ExtResource("3_2e4kn")]
+light_mask = 16
+visibility_layer = 16
 position = Vector2(-545, -747)
 
 [node name="VolverPasillo" type="Area2D" parent="."]
@@ -51,6 +531,24 @@ next_scene_path = "res://Scenes/Escenarios/Escritorio.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntrarPC"]
 position = Vector2(892.5, 362.5)
 shape = SubResource("RectangleShape2D_as1wr")
+
+[node name="viejo_animado" type="AnimatedSprite2D" parent="."]
+light_mask = 32
+visibility_layer = 32
+position = Vector2(1232, 656)
+scale = Vector2(0.690972, 0.690972)
+sprite_frames = SubResource("SpriteFrames_6v8p6")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Dialogo_viejo" parent="." instance=ExtResource("10_kmvqj")]
+position = Vector2(-9, -6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5o4b8")
+}
+autoplay = "habla_viejo"
 
 [connection signal="body_entered" from="VolverPasillo" to="VolverPasillo" method="_on_body_entered"]
 [connection signal="body_exited" from="VolverPasillo" to="VolverPasillo" method="_on_body_exited"]

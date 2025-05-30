@@ -3,7 +3,7 @@ extends Node2D
 # Propiedades exportadas
 @export var velocidad_mostrar: float = 0.05
 @export var tiempo_ocultar: float = 1.5
-@export var lineas_por_bloque: int = 3
+@export var lineas_por_bloque: int = 5
 
 # Variables
 var index = 0
@@ -14,29 +14,27 @@ var dialogo_actual: String = ""
 var fragmentos: Array = []
 var indice_fragmento: int = 0
 
+
 # Diálogos incrustados directamente en el script
-const DIALOGO_BYTEYAGI_1 := """
-Carambita carambola, ya tenemos aquí al chico/a de prácticas.
-Me presento, mi nombre es Maestro Byteyagi y llevo en esta empresa más de 35 años.
-En mis tiempos usábamos como tecnología a una médium y a una tabla ouija.
-
-Yo seré tu maestro Yoga, tu Iruka Umino, tu maestro Mutenroshi.
-Te guiaré por la senda de la sabiduría. Serás mi discípulo,
-y si tienes alguna duda, aprovecha porque en unos meses me jubilo.
-
-Bueno, empecemos por lo más básico: te explicaré la estructura de esta empresa.
-En esta empresa tenemos a la encantadora recepcionista Pam,
-a ella le puedes preguntar si te llegó alguna incidencia.
-
-Luego tenemos el departamento de contabilidad... esperemos que les cuadres.
-¡Eh! Lo pillas, lo pillas...
-Después está el departamento de ventas:
-Para ellos, 'el error es del usuario' es un mito.
-
+const DIALOGO_BYTEYAGI_1 := """Carambita carambola, ya tenemos aquí al chico/a de prácticas. Me presento, mi nombre es Maestro Byteyagi
+y llevo en esta empresa más de 35 años.En mis tiempos usábamos como tecnología a una médium y a una tabla ouija.
+Yo seré tu maestro Yoga, tu Iruka Umino, tu maestro Mutenroshi. Te guiaré por la senda de la sabiduría.
+Serás mi discípulo, y si tienes alguna duda, aprovecha porque en unos meses me jubilo.
+Bueno, empecemos por lo más básico: te explicaré la estructura de esta empresa. En esta empresa tenemos 
+a la encantadora recepcionista Pam, a ella le puedes preguntar si te llegó alguna incidencia. Luego tenemos el departamento 
+de contabilidad...esperemos que les cuadres.  ¡Eh! Lo pillas, lo pillas...
+Después está el departamento de ventas: Para ellos, 'el error es del usuario' es un mito.
 Para nosotros, es la causa raíz del 99% de los problemas.
 Luego está el departamento de marketing, expertos en hacer que ‘próximamente’ suene como si fuera mañana.
 Y por último, el departamento de recursos humanos... que de humanos tienen poco.
-"""
+Me acaba de llegar un Mensaje de Pam diciendonos que los de Contabilidad no pueden navegar...
+Vaya, vaya... a alguien se le hundió el barco. Mira tu archivo donde tienes las IPs de la empresa.
+Se llama IPS_Departamentos.txt y está en tu directorio personal, en la carpeta Documentos.
+La ruta absoluta es /home/usuario/Documentos. Vas a usar la terminal, para poder navegar por las carpetas es muy sencillo.
+Usarás el comando cd, por ejemplo: cd /home/usuario/Documentos. Hazlo y mira la magia.
+Así que acércate a tu ordenador cuando puedas. Pulsa E para encenderlo y estarás en el plano Despacho - Escritorio.
+Abre la terminal... y manos a la obra."""
+
 
 const DIALOGO_BYTEYAGI_2 := """
 Vaya, vaya... a alguien se le hundió el barco.
@@ -49,7 +47,7 @@ Usarás el comando cd, por ejemplo: cd /home/usuario/Documentos.
 
 Hazlo y mira la magia.
 Así que acércate a tu ordenador cuando puedas.
-Pulsa E para encenderlo y estarás en el plano Despacho - Escritorio.
+Pulsa E para empezar
 Abre la terminal... y manos a la obra.
 """
 
