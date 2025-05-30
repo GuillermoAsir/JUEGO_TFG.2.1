@@ -2,8 +2,8 @@ extends Node2D
 
 # Propiedades exportadas
 @export var texto: String = ""  # Texto del diálogo
-@export var velocidad_mostrar: float = 0.1  # Velocidad de escritura letra por letra
-@export var tiempo_ocultar: float = 1.5  # Tiempo antes de ocultar el diálogo
+@export var velocidad_mostrar: float = 0.050  # Velocidad de escritura letra por letra
+@export var tiempo_ocultar: float = 5  # Tiempo antes de ocultar el diálogo
 
 # Variables
 var index = 0

@@ -1,25 +1,36 @@
 extends Area2D
 
-@export var animacion: NodePath = ""
-@export var dialogo: NodePath = ""
+@export var animacion: NodePath
+@export var dialogo: NodePath
 
 var dialogo_mostrado := false
 
-func _on_body_entered(body):
-	if body.name == "chico" and not dialogo_mostrado:
-		mostrar_contenido()
-		get_tree().create_timer(2.0).connect("timeout", Callable(self, "_mostrar_dialogo"))
-		dialogo_mostrado = true
-
-func mostrar_contenido():
-	var animacion_nodo = get_node_or_null(animacion)
-	if animacion_nodo:
-		animacion_nodo.show()
-		animacion_nodo.play()
-
-func _mostrar_dialogo():
+func _ready():
+	# Ocultar diálogo al inicio
 	var dialogo_nodo = get_node_or_null(dialogo)
 	if dialogo_nodo:
-		dialogo_nodo.show()
+		dialogo_nodo.visible = false
 
-var timer : Timer = null
+func _on_IniciaRhh_body_entered(body):
+	if body.name == "chico" and not dialogo_mostrado:
+		dialogo_mostrado = true
+		reproducir_animacion()
+		await get_tree().create_timer(2.0).timeout
+		mostrar_dialogo()
+
+func reproducir_animacion():
+	var anim = get_node_or_null(animacion)
+	if anim and anim is AnimationPlayer:
+		anim.play("AnimationPlayerRRHH")  # Asegúrate que este nombre coincida exactamente
+
+func mostrar_dialogo():
+	var dialogo_nodo = get_node_or_null(dialogo)
+	if dialogo_nodo:
+		dialogo_nodo.visible = true
+
+func _on_AnimationPlayerRRHH_animation_finished(anim_name):
+	if anim_name == "AnimationPlayerRRHH":
+		# Activar la cámara tras la animación
+		var camara = get_node_or_null("/root/Node2D/Camera2DRRHH")  # Ajusta la ruta si es diferente
+		if camara and camara is Camera2D:
+			camara.make_current()

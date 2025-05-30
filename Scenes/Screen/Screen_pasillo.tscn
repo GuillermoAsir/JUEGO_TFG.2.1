@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bthyvwkpqdxvi"]
+[gd_scene load_steps=66 format=3 uid="uid://bthyvwkpqdxvi"]
 
 [ext_resource type="PackedScene" uid="uid://3f3o5soc7dvb" path="res://Scenes/Escenarios/pasillo.tscn" id="1_0oxf3"]
 [ext_resource type="PackedScene" uid="uid://s5olytk7wmkw" path="res://Scenes/Personajes/chico.tscn" id="2_36h4e"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c17cxk5r7d1kg" path="res://Assest/Sprite_personajes/Rrhh/explosion_rrhh.png" id="7_v681b"]
 [ext_resource type="Texture2D" uid="uid://eth1bss0n4by" path="res://Assest/Sprite_personajes/Rrhh/repo_rrhh.png" id="8_3japc"]
 [ext_resource type="Texture2D" uid="uid://da0trcqxdv5ol" path="res://Assest/Sprite_personajes/Rrhh/anda_rrhh.png" id="9_odoh5"]
+[ext_resource type="Texture2D" uid="uid://b2flunyt5f5yb" path="res://Assest/Sprite_personajes/Recepcionista/pam mesa.png" id="10_3japc"]
+[ext_resource type="Script" uid="uid://d33qkjoaqol8u" path="res://Scenes/Screen/inicio_pam.gd" id="11_odoh5"]
+[ext_resource type="PackedScene" uid="uid://ftjppkw31get" path="res://Scenes/Escenas_dialogos/dialogo_pam.tscn" id="12_4jmhk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyuwn"]
 atlas = ExtResource("7_v681b")
@@ -299,6 +302,42 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfrsq"]
+atlas = ExtResource("10_3japc")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovnlt"]
+atlas = ExtResource("10_3japc")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ut68"]
+atlas = ExtResource("10_3japc")
+region = Rect2(3200, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shfn7"]
+atlas = ExtResource("10_3japc")
+region = Rect2(4800, 0, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odoh5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfrsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovnlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ut68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shfn7")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 8.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0pc6"]
 size = Vector2(397, 637)
 
@@ -380,6 +419,42 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(1921, 1072), Vector2(1921, 1072)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2DRRHH:enabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2DRRHH:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333333, 29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2876, 1619), Vector2(2876, 1619)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2DRRHH:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.166666, 28.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_0puw4"]
 length = 20.0
@@ -455,11 +530,147 @@ tracks/5/keys = {
 "update": 1,
 "values": [&"farewell"]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2DRRHH:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2876, 1619)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2DRRHH:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4aog"]
 _data = {
 &"RESET": SubResource("Animation_0puw4"),
 &"aparición_rrhh": SubResource("Animation_4jmhk")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jmhk"]
+size = Vector2(391, 881)
+
+[sub_resource type="Animation" id="Animation_m4aog"]
+resource_name = "hablar_pam"
+length = 35.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(27.9, 34.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3726.25, 1705.25), Vector2(3726.25, 1705.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Dialogo_PAM:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667, 28.2667, 34.9429),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pam:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(28.0667, 34.7667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"talk", &"talk"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Dialogo_PAM:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(28.2333, 35.1667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2966, 1072), Vector2(2966, 1072)]
+}
+
+[sub_resource type="Animation" id="Animation_l1ojw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3726.25, 1705.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Dialogo_PAM:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pam:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"talk"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Dialogo_PAM:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2966, 1072)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1ojw"]
+_data = {
+&"RESET": SubResource("Animation_l1ojw"),
+&"hablar_pam": SubResource("Animation_m4aog")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -469,14 +680,25 @@ position = Vector2(1911, 1074)
 
 [node name="RRHH_ANIMACION" type="AnimatedSprite2D" parent="."]
 position = Vector2(3174, 1561)
-scale = Vector2(0.63375, 0.63375)
+scale = Vector2(0.596042, 0.596042)
 sprite_frames = SubResource("SpriteFrames_l1ojw")
 animation = &"farewell"
 autoplay = "appear"
 flip_h = true
 metadata/_edit_group_ = true
 
+[node name="Pam" type="AnimatedSprite2D" parent="."]
+light_mask = 32
+visibility_layer = 32
+position = Vector2(3726.25, 1705.25)
+scale = Vector2(0.665937, 0.665937)
+sprite_frames = SubResource("SpriteFrames_odoh5")
+animation = &"talk"
+autoplay = "talk"
+
 [node name="chico" parent="." instance=ExtResource("2_36h4e")]
+light_mask = 16
+visibility_layer = 16
 position = Vector2(26, 138)
 
 [node name="cam_pasillo" type="Camera2D" parent="chico"]
@@ -513,23 +735,53 @@ text = "PUSA E PARA ENTRAR AL DESPACHO"
 position = Vector2(8961, 1475)
 zoom = Vector2(2.165, 1.395)
 
+[node name="Camera2DRRHH" type="Camera2D" parent="."]
+position = Vector2(2876, 1619)
+
 [node name="IniciaRhh" type="Area2D" parent="."]
+light_mask = 16
+visibility_layer = 16
 script = ExtResource("5_2q2gm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IniciaRhh"]
-position = Vector2(2645, 1593)
+position = Vector2(2725, 1614)
 shape = SubResource("RectangleShape2D_xncfb")
 
 [node name="Dialogo_RRHH" parent="." instance=ExtResource("6_xncfb")]
 visible = false
+light_mask = 16
+visibility_layer = 16
 position = Vector2(1921, 1072)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayerRRHH" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_m4aog")
 }
 autoplay = "aparición_rrhh"
 
+[node name="InicioPam" type="Area2D" parent="."]
+script = ExtResource("11_odoh5")
+anim_player_path = NodePath("AnimationPlayerPam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InicioPam"]
+position = Vector2(3725, 1587)
+shape = SubResource("RectangleShape2D_4jmhk")
+
+[node name="AnimationPlayerPam" type="AnimationPlayer" parent="InicioPam"]
+libraries = {
+&"": SubResource("AnimationLibrary_l1ojw")
+}
+autoplay = "hablar_pam"
+
+[node name="Dialogo_PAM" parent="." instance=ExtResource("12_4jmhk")]
+visible = false
+light_mask = 64
+visibility_layer = 64
+position = Vector2(2966, 1072)
+
 [connection signal="body_entered" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_body_entered"]
 [connection signal="body_exited" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_body_exited"]
 [connection signal="body_entered" from="IniciaRhh" to="IniciaRhh" method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayerRRHH" to="IniciaRhh" method="_on_animation_player_rrhh_animation_finished"]
+[connection signal="body_entered" from="InicioPam" to="InicioPam" method="_on_body_entered"]
+[connection signal="animation_finished" from="InicioPam/AnimationPlayerPam" to="InicioPam" method="_on_animation_player_animation_finished"]
