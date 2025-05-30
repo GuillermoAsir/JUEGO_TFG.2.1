@@ -5,7 +5,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		cargar_escena_game()
 
 func cargar_escena_game():
-	var escena_game := preload("res://game.tscn")
+	var escena_game := preload("res://Scenes/Escenarios/Escritorio.tscn")
 	var instancia := escena_game.instantiate()
 	if instancia:
-		add_child(instancia)  # O usar otro nodo padre adecuado como get_node("UI") si es para mostrarla encima
+		add_child(instancia)  # O usar otro nodo padre adecuado como get_node("UI") si es para mostrarla

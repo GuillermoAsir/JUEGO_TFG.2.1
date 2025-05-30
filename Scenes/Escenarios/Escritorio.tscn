@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrlio"]
 size = Vector2(49, 36)
 
-[node name="Node2D" type="Node2D"]
+[node name="EscritorioDesktopPadre" type="Node2D"]
 
 [node name="EscritorioDesktop" type="Sprite2D" parent="."]
 position = Vector2(963, 537)

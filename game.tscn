@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnyfgnkbfuxen"]
+[gd_scene load_steps=12 format=3 uid="uid://bnyfgnkbfuxen"]
 
 [ext_resource type="Script" uid="uid://cemyij6msbtc3" path="res://terminal.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bqtv2oh2e67vs" path="res://dialog_box.gd" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://ckjrsu4f5ev1y" path="res://Assest/ESCENARIOS/Partes despacho/Escritorio_desktop.png" id="2_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://pc8f7qa1v13l" path="res://Assest/ESCENARIOS/Iconos PC/cerrar_minimizar_cuadrado_1.png" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://bf03s8hio4fva" path="res://terminal_zoom.gd" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://c7dd01ua7sw78" path="res://volver_escritorio.gd" id="6_ryrav"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
 bg_color = Color(0.466667, 0.129412, 0.435294, 1)
@@ -10,6 +14,15 @@ bg_color = Color(0.466667, 0.129412, 0.435294, 1)
 bg_color = Color(0.43202, 0.0577897, 0.323715, 1)
 draw_center = false
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(16.5, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(21, 13.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(19, 15)
+
 [node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -17,10 +30,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_80nbo")
 
+[node name="EscritorioDesktop" type="Sprite2D" parent="."]
+position = Vector2(955, 556)
+scale = Vector2(1.02222, 1.02222)
+texture = ExtResource("2_fc0e3")
+
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 437.0
+offset_top = 32.0
+offset_right = 1537.0
+offset_bottom = 632.0
+metadata/_edit_group_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Background"]
 layout_mode = 2
@@ -51,22 +72,33 @@ metadata/_edit_group_ = true
 visible = false
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 426.0
+offset_top = 28.0
+offset_right = 1527.0
+offset_bottom = 628.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_80nbo")
+metadata/_edit_group_ = true
 
 [node name="Editor" type="TextEdit" parent="NanoPanel"]
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 1111.0
+offset_bottom = 603.0
 theme_override_colors/background_color = Color(0.189703, 0.637374, 0.4209, 1)
 
 [node name="GuardarBoton" type="Button" parent="NanoPanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.901907
+anchor_top = 0.953333
+anchor_right = 1.00363
+anchor_bottom = 0.991667
 offset_right = 8.0
 offset_bottom = 8.0
 text = "guardar y salir"
+metadata/_edit_use_anchors_ = true
 
 [node name="ContainerDialogo" type="PanelContainer" parent="."]
 visible = false
@@ -82,6 +114,7 @@ grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 2
 mouse_filter = 2
+metadata/_edit_group_ = true
 
 [node name="DialogBox" type="Popup" parent="ContainerDialogo"]
 position = Vector2i(0, 849)
@@ -99,3 +132,36 @@ offset_right = 40.0
 offset_bottom = 40.0
 focus_mode = 2
 mouse_filter = 2
+
+[node name="CerrarMinimizarCuadrado1" type="Sprite2D" parent="."]
+position = Vector2(1494, 52)
+scale = Vector2(0.246988, 0.246988)
+texture = ExtResource("3_feb5d")
+
+[node name="Camara_cerca" type="Camera2D" parent="."]
+position = Vector2(990, 321)
+zoom = Vector2(1.715, 1.725)
+
+[node name="Camara_lejos" type="Camera2D" parent="."]
+position = Vector2(959, 539)
+
+[node name="TerminalZoom" type="Area2D" parent="."]
+script = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalZoom"]
+position = Vector2(1494, 52)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="VolverEscritorio" type="Area2D" parent="."]
+script = ExtResource("6_ryrav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VolverEscritorio"]
+position = Vector2(1471, 52)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VolverEscritorio"]
+position = Vector2(1517, 52)
+shape = SubResource("RectangleShape2D_j5wjh")
+
+[connection signal="input_event" from="TerminalZoom" to="TerminalZoom" method="_on_input_event"]
+[connection signal="input_event" from="VolverEscritorio" to="VolverEscritorio" method="_on_input_event"]
