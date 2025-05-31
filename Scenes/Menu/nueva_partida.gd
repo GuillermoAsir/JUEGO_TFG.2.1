@@ -5,4 +5,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		cargar_escena_game()
 
 func cargar_escena_game():
-	get_tree().change_scene_to_file("res://Scenes/Escenarios/Escritorio.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Screen/Screen_pasillo.tscn")

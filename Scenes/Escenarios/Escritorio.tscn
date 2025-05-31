@@ -1,33 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6rrjvfubobu8"]
+[gd_scene load_steps=11 format=3 uid="uid://c6rrjvfubobu8"]
 
 [ext_resource type="Texture2D" uid="uid://ckjrsu4f5ev1y" path="res://Assest/ESCENARIOS/Partes despacho/Escritorio_desktop.png" id="1_paq6n"]
 [ext_resource type="Texture2D" uid="uid://dwogaekx6j142" path="res://Assest/ESCENARIOS/Partes despacho/pantalla pc.png" id="2_7ruv4"]
 [ext_resource type="Script" uid="uid://c1wrswdnnkjsf" path="res://Scenes/Escenarios/cambiar_camara.gd" id="3_okcyh"]
 [ext_resource type="Script" uid="uid://dsheqqfxw6ylr" path="res://Scenes/Escenarios/cambiar_terminal.gd" id="4_od0to"]
-[ext_resource type="Script" uid="uid://b75tnufi53cjf" path="res://Scenes/Escenarios/volver_despacho.gd" id="5_lrlio"]
+[ext_resource type="Script" uid="uid://dmfpd52s7541f" path="res://Scenes/Escenarios/volver_despacho.gd" id="5_lrlio"]
+[ext_resource type="AudioStream" uid="uid://b5pxm4up6d735" path="res://Music/Music_escenarios/musica-despacho-8bit.mp3" id="6_dc2si"]
+[ext_resource type="Script" uid="uid://lw4vmx2kbmim" path="res://Scenes/Escenarios/mute.gd" id="6_ydpdj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okcyh"]
+size = Vector2(17.5, 16.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrlio"]
-size = Vector2(49, 36)
+size = Vector2(22, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhbxt"]
+size = Vector2(27, 22)
 
 [node name="EscritorioDesktopPadre" type="Node2D"]
 
 [node name="EscritorioDesktop" type="Sprite2D" parent="."]
-position = Vector2(975, 564)
+position = Vector2(955, 556)
 texture = ExtResource("1_paq6n")
 
 [node name="PantallaPc" type="Sprite2D" parent="."]
-position = Vector2(1002, 331)
-scale = Vector2(0.559698, 0.509361)
+position = Vector2(986.5, 332.114)
+scale = Vector2(0.562565, 0.524836)
 texture = ExtResource("2_7ruv4")
 
 [node name="Camera_lejos" type="Camera2D" parent="."]
-position = Vector2(974, 533)
+position = Vector2(953, 554)
 
 [node name="Camera_cerca" type="Camera2D" parent="."]
-position = Vector2(993, 307)
-zoom = Vector2(1.8, 1.99)
+position = Vector2(989, 348)
+zoom = Vector2(1.755, 1.73)
 limit_left = 0
 
 [node name="CambiarCamara" type="Area2D" parent="." node_paths=PackedStringArray("camara_lejos", "camara_cerca")]
@@ -36,25 +42,38 @@ camara_lejos = NodePath("../Camera_lejos")
 camara_cerca = NodePath("../Camera_cerca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CambiarCamara"]
-position = Vector2(1513, 59.5)
+position = Vector2(1506.25, 73.75)
 shape = SubResource("RectangleShape2D_okcyh")
 
 [node name="CambiarTerminal" type="Area2D" parent="."]
 script = ExtResource("4_od0to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CambiarTerminal"]
-position = Vector2(497, 185)
+position = Vector2(483, 182.125)
 shape = SubResource("RectangleShape2D_lrlio")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 104.0
-offset_top = 112.0
-offset_right = 287.0
-offset_bottom = 170.0
-text = "volver al despacho"
+[node name="VolverDespacho" type="Area2D" parent="."]
 script = ExtResource("5_lrlio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VolverDespacho"]
+position = Vector2(1474, 72.5)
+shape = SubResource("RectangleShape2D_lrlio")
+
+[node name="Mute" type="Area2D" parent="." node_paths=PackedStringArray("musica_fondo")]
+script = ExtResource("6_ydpdj")
+musica_fondo = NodePath("../Musica-despacho-8Bit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mute"]
+position = Vector2(1398.5, 73)
+shape = SubResource("RectangleShape2D_qhbxt")
+
+[node name="Musica-despacho-8Bit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dc2si")
+volume_db = -21.835
+autoplay = true
+parameters/looping = true
 
 [connection signal="input_event" from="CambiarCamara" to="CambiarCamara" method="_on_input_event"]
 [connection signal="input_event" from="CambiarTerminal" to="CambiarTerminal" method="_on_input_event"]
-[connection signal="gui_input" from="Button" to="Button" method="_on_gui_input"]
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="input_event" from="VolverDespacho" to="VolverDespacho" method="_on_input_event"]
+[connection signal="input_event" from="Mute" to="Mute" method="_on_muteador_input_event"]

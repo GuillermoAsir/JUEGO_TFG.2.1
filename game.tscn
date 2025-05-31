@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnyfgnkbfuxen"]
+[gd_scene load_steps=13 format=3 uid="uid://bnyfgnkbfuxen"]
 
 [ext_resource type="Script" uid="uid://cemyij6msbtc3" path="res://terminal.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bqtv2oh2e67vs" path="res://dialog_box.gd" id="2_e2o6t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pc8f7qa1v13l" path="res://Assest/ESCENARIOS/Iconos PC/cerrar_minimizar_cuadrado_1.png" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://bf03s8hio4fva" path="res://terminal_zoom.gd" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://c7dd01ua7sw78" path="res://volver_escritorio.gd" id="6_ryrav"]
+[ext_resource type="AudioStream" uid="uid://d1fkva7ullx46" path="res://Music/Music_misiones/musica-batalla-8bit.mp3" id="7_eow3j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
 bg_color = Color(0.466667, 0.129412, 0.435294, 1)
@@ -15,13 +16,13 @@ bg_color = Color(0.43202, 0.0577897, 0.323715, 1)
 draw_center = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
-size = Vector2(16.5, 14)
+size = Vector2(16.5, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
-size = Vector2(21, 13.625)
+size = Vector2(15, 35.9063)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
-size = Vector2(19, 15)
+size = Vector2(15, 36.75)
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -75,7 +76,7 @@ layout_mode = 0
 offset_left = 426.0
 offset_top = 28.0
 offset_right = 1527.0
-offset_bottom = 628.0
+offset_bottom = 636.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_80nbo")
 metadata/_edit_group_ = true
 
@@ -85,7 +86,7 @@ layout_mode = 0
 offset_left = 10.0
 offset_top = 3.0
 offset_right = 1111.0
-offset_bottom = 603.0
+offset_bottom = 608.0
 theme_override_colors/background_color = Color(0.189703, 0.637374, 0.4209, 1)
 
 [node name="GuardarBoton" type="Button" parent="NanoPanel"]
@@ -138,30 +139,38 @@ position = Vector2(1494, 52)
 scale = Vector2(0.246988, 0.246988)
 texture = ExtResource("3_feb5d")
 
-[node name="Camara_cerca" type="Camera2D" parent="."]
-position = Vector2(990, 321)
-zoom = Vector2(1.715, 1.725)
-
 [node name="Camara_lejos" type="Camera2D" parent="."]
 position = Vector2(959, 539)
 
-[node name="TerminalZoom" type="Area2D" parent="."]
+[node name="Camara_cerca" type="Camera2D" parent="."]
+position = Vector2(988, 344)
+zoom = Vector2(1.71, 1.71)
+
+[node name="TerminalZoom" type="Area2D" parent="." node_paths=PackedStringArray("camara_lejos", "camara_cerca")]
 script = ExtResource("5_7jktm")
+camara_lejos = NodePath("../Camara_lejos")
+camara_cerca = NodePath("../Camara_cerca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalZoom"]
-position = Vector2(1494, 52)
+position = Vector2(1494, 44)
 shape = SubResource("RectangleShape2D_ryrav")
 
 [node name="VolverEscritorio" type="Area2D" parent="."]
 script = ExtResource("6_ryrav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VolverEscritorio"]
-position = Vector2(1471, 52)
+position = Vector2(1471.5, 43.9531)
 shape = SubResource("RectangleShape2D_eow3j")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="VolverEscritorio"]
-position = Vector2(1517, 52)
+position = Vector2(1516.5, 43.375)
 shape = SubResource("RectangleShape2D_j5wjh")
 
-[connection signal="input_event" from="TerminalZoom" to="TerminalZoom" method="_on_input_event"]
+[node name="Musica-batalla-8Bit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_eow3j")
+volume_db = -21.835
+autoplay = true
+parameters/looping = true
+
+[connection signal="input_event" from="TerminalZoom" to="TerminalZoom" method="_on_terminal_zoom_input_event"]
 [connection signal="input_event" from="VolverEscritorio" to="VolverEscritorio" method="_on_input_event"]

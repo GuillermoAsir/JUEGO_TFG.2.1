@@ -5,11 +5,6 @@ extends Area2D
 
 var camara_actual_cerca := false
 
-#func _on_CambiarCamara_input_event(viewport, event, shape_idx):
-	#if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		#print("¡Clic detectado!")
-		#cambiar_camara()
-
 func cambiar_camara():
 	if camara_actual_cerca:
 		camara_lejos.make_current()

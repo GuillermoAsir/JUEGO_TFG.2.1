@@ -306,8 +306,6 @@ scale = Vector2(0.63375, 0.63375)
 sprite_frames = SubResource("SpriteFrames_stdms")
 animation = &"farewell"
 autoplay = "idle"
-frame = 10
-frame_progress = 1.0
 metadata/_edit_group_ = true
 
 [connection signal="animation_finished" from="animaciones" to="." method="_on_animaciones_animation_finished"]

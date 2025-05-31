@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ConfiguracionInicial="*res://configuracion_inicial.gd"
 Funciones="*res://funciones.gd"
 Dialogos="*res://dialogos.gd"
+estado_juego="*res://estado_juego.gd"
 
 [display]
 

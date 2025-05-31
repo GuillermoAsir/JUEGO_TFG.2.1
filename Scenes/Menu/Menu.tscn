@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://2esiontw16e5"]
+
+[ext_resource type="Texture2D" uid="uid://da5ceqeddh5y3" path="res://Scenes/Escenarios/Menu.png" id="1_3kh17"]
+[ext_resource type="Script" uid="uid://1p0ijjccxxq8" path="res://Scenes/Menu/cerrar_juego.gd" id="2_kqkty"]
+[ext_resource type="AudioStream" uid="uid://bf2u0egj8c7p4" path="res://Assest/Sprite_personajes/Recepcionista/menu_music.mp3" id="3_kqkty"]
+[ext_resource type="Script" uid="uid://rqcmrhncf65o" path="res://Scenes/Menu/mute_music.gd" id="4_47xui"]
+[ext_resource type="Script" uid="uid://bph4sdly5l2pn" path="res://Scenes/Menu/volumen.gd" id="5_kulhe"]
+[ext_resource type="Script" uid="uid://cynw7tw0quwul" path="res://Scenes/Menu/nueva_partida.gd" id="6_l7xyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47xui"]
+size = Vector2(135, 141.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kulhe"]
+size = Vector2(681, 212.5)
+
+[node name="Menu" type="Node2D"]
+position = Vector2(521, 292)
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(436, 251)
+texture = ExtResource("1_3kh17")
+
+[node name="CerrarJuego" type="Area2D" parent="."]
+position = Vector2(441, 249)
+script = ExtResource("2_kqkty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CerrarJuego"]
+position = Vector2(834, -419)
+shape = SubResource("RectangleShape2D_47xui")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kqkty")
+volume_db = -22.285
+autoplay = true
+parameters/looping = true
+
+[node name="Mute" type="Area2D" parent="." node_paths=PackedStringArray("musica_fondo")]
+position = Vector2(882, 498)
+script = ExtResource("4_47xui")
+musica_fondo = NodePath("../MenuMusic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mute"]
+position = Vector2(-968, 12)
+shape = SubResource("RectangleShape2D_47xui")
+
+[node name="Volumen" type="Area2D" parent="." node_paths=PackedStringArray("musica_fondo")]
+position = Vector2(441, 249)
+script = ExtResource("5_kulhe")
+musica_fondo = NodePath("../MenuMusic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Volumen"]
+position = Vector2(-531, 87)
+shape = SubResource("RectangleShape2D_47xui")
+
+[node name="Ajustes" type="Area2D" parent="."]
+position = Vector2(441, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ajustes"]
+position = Vector2(-705, 261)
+shape = SubResource("RectangleShape2D_47xui")
+
+[node name="NuevaPartida" type="Area2D" parent="."]
+script = ExtResource("6_l7xyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NuevaPartida"]
+position = Vector2(444, 242)
+shape = SubResource("RectangleShape2D_kulhe")
+
+[node name="CargarPartida" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CargarPartida"]
+position = Vector2(442, 486)
+shape = SubResource("RectangleShape2D_kulhe")
+
+[connection signal="input_event" from="CerrarJuego" to="CerrarJuego" method="_on_cerrar_juego_input_event"]
+[connection signal="input_event" from="Mute" to="Mute" method="_on_mute_input_event"]
+[connection signal="input_event" from="Volumen" to="Volumen" method="_on_volumen_input_event"]
+[connection signal="input_event" from="NuevaPartida" to="NuevaPartida" method="_on_input_event"]

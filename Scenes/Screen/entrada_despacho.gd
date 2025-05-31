@@ -28,12 +28,9 @@ func _on_body_exited(body):
 		else:
 			print("❌ No se puede ocultar el Label porque es nulo.")
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
-		change_scene()
+func _on_entrada_despacho_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		cargar_escena_game()
 
-func change_scene():
-	if next_scene_path != "":
-		get_tree().change_scene_to_file(next_scene_path)
-	else:
-		print("❌ No se ha configurado la ruta de la escena.")
+func cargar_escena_game():
+	get_tree().change_scene_to_file("res://Scenes/Screen/Screen_despacho.tscn")

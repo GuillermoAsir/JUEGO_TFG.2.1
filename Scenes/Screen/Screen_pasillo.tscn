@@ -788,6 +788,7 @@ parameters/looping = true
 
 [connection signal="body_entered" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_body_entered"]
 [connection signal="body_exited" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_body_exited"]
+[connection signal="input_event" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_entrada_despacho_input_event"]
 [connection signal="body_entered" from="IniciaRhh" to="IniciaRhh" method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayerRRHH" to="IniciaRhh" method="_on_animation_player_rrhh_animation_finished"]
 [connection signal="body_entered" from="InicioPam" to="InicioPam" method="_on_body_entered"]
