@@ -1,6 +1,7 @@
-[gd_scene load_steps=67 format=3 uid="uid://bthyvwkpqdxvi"]
+[gd_scene load_steps=69 format=3 uid="uid://bthyvwkpqdxvi"]
 
 [ext_resource type="PackedScene" uid="uid://3f3o5soc7dvb" path="res://Scenes/Escenarios/pasillo.tscn" id="1_0oxf3"]
+[ext_resource type="Script" uid="uid://ca8n141uqthld" path="res://Scenes/Screen/screen_pasillo.gd" id="1_l1ojw"]
 [ext_resource type="PackedScene" uid="uid://s5olytk7wmkw" path="res://Scenes/Personajes/chico.tscn" id="2_36h4e"]
 [ext_resource type="Script" uid="uid://el8wwm3pleyj" path="res://Scenes/Screen/cam_pasillo.gd" id="3_36h4e"]
 [ext_resource type="Script" uid="uid://bvday6mvhlria" path="res://Scenes/Screen/entrada_despacho.gd" id="4_32j2r"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" uid="uid://d33qkjoaqol8u" path="res://Scenes/Screen/inicio_pam.gd" id="11_odoh5"]
 [ext_resource type="PackedScene" uid="uid://ftjppkw31get" path="res://Scenes/Escenas_dialogos/dialogo_pam.tscn" id="12_4jmhk"]
 [ext_resource type="AudioStream" uid="uid://dqaktq7rfh8hy" path="res://Music/Music_escenarios/musica-pasillo-8bit.mp3" id="13_0puw4"]
+[ext_resource type="AudioStream" uid="uid://b15vsmyhxfhyq" path="res://Music/Personajes/efectos/explosión.mp3" id="14_m4aog"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyuwn"]
 atlas = ExtResource("7_v681b")
@@ -386,55 +388,55 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RRHH_ANIMACION:position")
+tracks/3/path = NodePath("Dialogo_RRHH:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3174, 1561)]
+"values": [Vector2(1921, 1072)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Dialogo_RRHH:position")
+tracks/4/path = NodePath("RRHH_ANIMACION:animation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1921, 1072)]
+"update": 1,
+"values": [&"farewell"]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("RRHH_ANIMACION:animation")
+tracks/5/path = NodePath("Camera2DRRHH:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"farewell"]
+"update": 0,
+"values": [Vector2(2876, 1619)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Camera2DRRHH:position")
+tracks/6/path = NodePath("Camera2DRRHH:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2876, 1619)]
+"update": 1,
+"values": [true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Camera2DRRHH:visible")
+tracks/7/path = NodePath("Explosion:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -442,6 +444,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RRHH_ANIMACION:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3173, 1641)]
 }
 
 [sub_resource type="Animation" id="Animation_4jmhk"]
@@ -498,62 +512,74 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("RRHH_ANIMACION:position")
+tracks/4/path = NodePath("Dialogo_RRHH:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 28.8667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3182, 1594), Vector2(3182, 1594)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Dialogo_RRHH:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(1.3, 27.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1921, 1072), Vector2(1921, 1072)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Camera2DRRHH:enabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2DRRHH:enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(),
 "transitions": PackedFloat32Array(),
 "update": 1,
 "values": []
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Camera2DRRHH:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2DRRHH:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0.0333333, 29),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(2876, 1619), Vector2(2876, 1619)]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Camera2DRRHH:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2DRRHH:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0.166666, 28.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Explosion:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(-0.0333333, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("RRHH_ANIMACION:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(-0.0333333, 28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3173, 1641), Vector2(3173, 1641)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4aog"]
@@ -561,9 +587,6 @@ _data = {
 &"RESET": SubResource("Animation_0puw4"),
 &"aparición_rrhh": SubResource("Animation_4jmhk")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jmhk"]
-size = Vector2(391, 881)
 
 [sub_resource type="Animation" id="Animation_l1ojw"]
 length = 0.001
@@ -674,13 +697,17 @@ _data = {
 &"hablar_pam": SubResource("Animation_m4aog")
 }
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jmhk"]
+size = Vector2(391, 881)
+
+[node name="Screen_pasillo" type="Node2D"]
+script = ExtResource("1_l1ojw")
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_0oxf3")]
 position = Vector2(1911, 1074)
 
 [node name="RRHH_ANIMACION" type="AnimatedSprite2D" parent="."]
-position = Vector2(3174, 1561)
+position = Vector2(3173, 1641)
 scale = Vector2(0.596042, 0.596042)
 sprite_frames = SubResource("SpriteFrames_l1ojw")
 animation = &"farewell"
@@ -700,7 +727,7 @@ autoplay = "talk"
 [node name="chico" parent="." instance=ExtResource("2_36h4e")]
 light_mask = 16
 visibility_layer = 16
-position = Vector2(26, 138)
+position = Vector2(75, 202)
 
 [node name="cam_pasillo" type="Camera2D" parent="chico"]
 position = Vector2(307, 1356)
@@ -760,19 +787,20 @@ libraries = {
 }
 autoplay = "aparición_rrhh"
 
-[node name="InicioPam" type="Area2D" parent="."]
-script = ExtResource("11_odoh5")
-anim_player_path = NodePath("AnimationPlayerPam")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InicioPam"]
-position = Vector2(3725, 1587)
-shape = SubResource("RectangleShape2D_4jmhk")
-
-[node name="AnimationPlayerPam" type="AnimationPlayer" parent="InicioPam"]
+[node name="AnimationPlayerPam" type="AnimationPlayer" parent="."]
+root_node = NodePath("../InicioPam")
 libraries = {
 &"": SubResource("AnimationLibrary_l1ojw")
 }
 autoplay = "hablar_pam"
+
+[node name="InicioPam" type="Area2D" parent="."]
+script = ExtResource("11_odoh5")
+anim_player_path = NodePath("../AnimationPlayerPam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InicioPam"]
+position = Vector2(3725, 1587)
+shape = SubResource("RectangleShape2D_4jmhk")
 
 [node name="Dialogo_PAM" parent="." instance=ExtResource("12_4jmhk")]
 visible = false
@@ -783,13 +811,17 @@ position = Vector2(2966, 1072)
 [node name="Musica-pasillo-8Bit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_0puw4")
 volume_db = -18.387
-autoplay = true
 parameters/looping = true
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_m4aog")
+volume_db = -24.762
+pitch_scale = 0.39
 
 [connection signal="body_entered" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_body_entered"]
 [connection signal="body_exited" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_body_exited"]
 [connection signal="input_event" from="Entrada_Despacho" to="Entrada_Despacho" method="_on_entrada_despacho_input_event"]
 [connection signal="body_entered" from="IniciaRhh" to="IniciaRhh" method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayerRRHH" to="IniciaRhh" method="_on_animation_player_rrhh_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayerPam" to="InicioPam" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="InicioPam" to="InicioPam" method="_on_body_entered"]
-[connection signal="animation_finished" from="InicioPam/AnimationPlayerPam" to="InicioPam" method="_on_animation_player_animation_finished"]

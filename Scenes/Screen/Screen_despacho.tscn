@@ -1,5 +1,6 @@
-[gd_scene load_steps=49 format=3 uid="uid://cji6pw5mjes1q"]
+[gd_scene load_steps=50 format=3 uid="uid://cji6pw5mjes1q"]
 
+[ext_resource type="Script" uid="uid://cqrvpgnojs8q7" path="res://Scenes/Screen/screen_despacho.gd" id="1_h7j14"]
 [ext_resource type="PackedScene" uid="uid://bjx04ojbedswp" path="res://Scenes/Escenarios/despacho.tscn" id="1_oncvu"]
 [ext_resource type="PackedScene" uid="uid://bxgeq48pyy3o" path="res://Scenes/NPC/viejo.tscn" id="2_71d0s"]
 [ext_resource type="PackedScene" uid="uid://s5olytk7wmkw" path="res://Scenes/Personajes/chico.tscn" id="3_2e4kn"]
@@ -482,8 +483,9 @@ _data = {
 &"habla_viejo": SubResource("Animation_f4pn5")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Screen_despacho" type="Node2D"]
 position = Vector2(1920, 1080)
+script = ExtResource("1_h7j14")
 
 [node name="Despacho" parent="." instance=ExtResource("1_oncvu")]
 position = Vector2(-9, 1)
