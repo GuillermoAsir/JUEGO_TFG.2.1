@@ -43,3 +43,8 @@ func decide_animation(direction := Vector2.ZERO):
 		else:
 			$animaciones.flip_h = direction.x < 0
 			$animaciones.play("run")
+
+# --- Nueva función: Cargar posición del jugador ---
+func load_position():
+	if GLOBAL != null:
+		global_position = GLOBAL.game_data["position"]

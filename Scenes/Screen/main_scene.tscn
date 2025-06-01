@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://d064xpumcf5ug"]
+
+[ext_resource type="PackedScene" uid="uid://bthyvwkpqdxvi" path="res://Scenes/Screen/Screen_pasillo.tscn" id="2_x363s"]
+[ext_resource type="PackedScene" uid="uid://cji6pw5mjes1q" path="res://Scenes/Screen/Screen_despacho.tscn" id="3_4eh22"]
+
+[sub_resource type="GDScript" id="GDScript_520ra"]
+script/source = "# SceneManager.gd
+extends Node2D
+
+@export var scene_pasillo_path := \"res://Scenes/Screen/Screen_pasillo.tscn\"
+@export var scene_despacho_path := \"res://Scenes/Screen/Screen_despacho.tscn\"
+
+var scene_pasillo: Node
+var scene_despacho: Node
+
+func _ready():
+	# Carga ambas escenas si no están ya instanciadas
+	if $Pasillo:
+		scene_pasillo = $Pasillo
+	else:
+		scene_pasillo = load(scene_pasillo_path).instantiate()
+		add_child(scene_pasillo)
+
+	if $Despacho:
+		scene_despacho = $Despacho
+	else:
+		scene_despacho = load(scene_despacho_path).instantiate()
+		scene_despacho.hide()
+		add_child(scene_despacho)
+
+	# Mostrar pasillo al inicio
+	show_scene(\"pasillo\")
+
+func show_scene(name: String):
+	match name:
+		\"pasillo\":
+			scene_pasillo.show()
+			scene_despacho.hide()
+			var player = scene_pasillo.get_node(\"chico\") # Asegúrate de que la ruta sea correcta
+			if player and player.has_method(\"load_position\"):
+				player.load_position()
+
+		\"despacho\":
+			scene_pasillo.hide()
+			scene_despacho.show()
+			var player = scene_despacho.get_node(\"chico\") # Asegúrate de que la ruta sea correcta
+			if player and player.has_method(\"load_position\"):
+				player.load_position()
+"
+
+[node name="MainScene" type="Node2D"]
+script = SubResource("GDScript_520ra")
+
+[node name="Screen_pasillo" parent="." instance=ExtResource("2_x363s")]
+
+[node name="Screen_despacho" parent="." instance=ExtResource("3_4eh22")]
