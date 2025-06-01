@@ -6,12 +6,19 @@
 texture = ExtResource("1_m3ln5")
 texture_region_size = Vector2i(1920, 1080)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-832, -568, -824, 256, 416, 256, 392, -552)
-0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-1312, -576, -968, -584, -976, 544, -1320, 552)
-0:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-1130.36, 539.909, -1112, 708, 944, 708, 978.73, 539.909)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1000, 264, -840, 248, -824, 328, -824, 328, -680, 328, -664, 248, -520, 248, -520, 312, 264, 312, 280, 248, 632, 248, 648, 424, 968, 424, 952, -536, -952, -536)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-968, 552, -1016, 552, -1000, 248, -952, 248)
+0:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(968, 536, 968, 552, -968, 552, -968, 536)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-968, 424, -792, 424, -792, 264, -488, 264, 104, 264, 200, 264, 200, 312, 216, 312, 376, 312, 376, 264, 968, 264, 968, -536, -968, -536, -968, 248)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-968, 536, -968, 552, 968, 552, 968, 536)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-968, 264, -792, 264, -520, 264, -504, 280, -392, 280, -376, 264, -184, 264, 328, 264, 536, 264, 872, 264, 1032, 264, 968, -536, -968, -536)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-968, 536, -968, 552, 968, 552, 968, 536)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-888, 264, -872, 264, -536, 264, -520, 328, -136, 328, -120, 264, 216, 264, 312, 264, 680, 264, 712, 264, 728, 264, 760, 264, 920, 264, 952, 264, 952, 264, 968, 264, 968, 248, 968, -536, -968, -536)
+3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-968, 536, -968, 552, 968, 552, 968, 536)
+3:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(968, 568, 952, 568, 952, 248, 968, 248)
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
@@ -32171,6 +32178,7 @@ texture_region_size = Vector2i(1920, 1080)
 
 [sub_resource type="TileSet" id="TileSet_11b25"]
 physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_rdims")
 
 [node name="TileMapLayer" type="TileMapLayer"]

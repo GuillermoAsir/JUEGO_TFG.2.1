@@ -1,14 +1,25 @@
 extends CharacterBody2D
 
+# Configuración básica
 const SPEED = 400.0
 var appeared: bool = true
+
+# Guardado
+var GLOBAL = null
 var time_since_last_save := 0.0
 const SAVE_INTERVAL = 1.0 # segundos
 
-var GLOBAL = null
+# Sonido de pasos
+@onready var audio_pasos := $Audio_pasos as AudioStreamPlayer
+var is_playing_steps = false
+
+# Dirección anterior para detectar cambio de movimiento
+var previous_direction := Vector2.ZERO
 
 func _ready():
+	# Acceder al nodo global de guardado
 	GLOBAL = get_tree().get_root().get_node("GlobalSave")
+	add_to_group("Player")
 
 func _physics_process(delta):
 	var dir_x = Input.get_axis("ui_left", "ui_right")
@@ -19,6 +30,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 	decide_animation(direction)
+
+	# Reproducir sonido de pasos solo cuando haya cambio de dirección o comience a moverse
+	if direction != Vector2.ZERO:
+		if direction != previous_direction and audio_pasos:
+			audio_pasos.play()
+			is_playing_steps = true
+	elif direction == Vector2.ZERO and is_playing_steps:
+		audio_pasos.stop()
+		is_playing_steps = false
+
+	# Actualizar dirección previa
+	previous_direction = direction
 
 	# Guardar posición periódicamente
 	time_since_last_save += delta
@@ -44,7 +67,14 @@ func decide_animation(direction := Vector2.ZERO):
 			$animaciones.flip_h = direction.x < 0
 			$animaciones.play("run")
 
-# --- Nueva función: Cargar posición del jugador ---
+# --- Función para cargar la posición desde guardado ---
 func load_position():
 	if GLOBAL != null:
-		global_position = GLOBAL.game_data["position"]
+		global_position = GLOBAL.game_data.get("position", Vector2(75, 202))
+
+# --- Función para guardar posición por escena ---
+func save_current_position(scene_name: String):
+	if GLOBAL != null:
+		GLOBAL.game_data["position_" + scene_name] = global_position
+		GLOBAL.game_data["last_scene"] = scene_name
+		GLOBAL.save_game()

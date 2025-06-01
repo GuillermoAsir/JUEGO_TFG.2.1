@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8ts872jenslr"]
 
-[ext_resource type="Texture2D" uid="uid://b2flunyt5f5yb" path="res://Assest/Sprite_personajes/Recepcionista/pam mesa.png" id="1_okeyd"]
+[ext_resource type="Texture2D" uid="uid://c4rhiaklo1ng5" path="res://Assest/Sprite_personajes/Recepcionista/pam mesa_hablar.png" id="1_okeyd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfrsq"]
 atlas = ExtResource("1_okeyd")

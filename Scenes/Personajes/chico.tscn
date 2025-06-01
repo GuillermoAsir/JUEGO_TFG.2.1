@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://s5olytk7wmkw"]
+[gd_scene load_steps=38 format=3 uid="uid://s5olytk7wmkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4g8dahiygbdc" path="res://Assest/Sprite_personajes/Chico/chico frente.png" id="1_4sx1l"]
 [ext_resource type="Script" uid="uid://ddvihcc4wj1ek" path="res://Scenes/Personajes/chico.gd" id="1_d5qxt"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bgxomh3dg8kqt" path="res://Assest/Sprite_personajes/Chico/chico anda.png" id="3_yo44m"]
 [ext_resource type="Texture2D" uid="uid://dit0fbdh6a2mu" path="res://Assest/Sprite_personajes/Chico/chico espalda.png" id="4_yfqt6"]
 [ext_resource type="Script" uid="uid://cdcfv81qhrtww" path="res://Scenes/Personajes/camera_chico.gd" id="6_yo44m"]
+[ext_resource type="AudioStream" uid="uid://b2t6xia384uee" path="res://Music/Personajes/efectos/pasos_largos.ogg" id="7_yfqt6"]
+[ext_resource type="PackedScene" uid="uid://c8dp1emdnevwo" path="res://Scenes/Music_Scenes/global_audio.tscn" id="8_fmevp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmevp"]
 atlas = ExtResource("1_4sx1l")
@@ -234,9 +236,7 @@ script = ExtResource("1_d5qxt")
 position = Vector2(2129.5, 1396.25)
 scale = Vector2(0.65375, 0.65375)
 sprite_frames = SubResource("SpriteFrames_ju2l4")
-animation = &"run"
-frame = 3
-frame_progress = 0.800237
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(2132, 1541)
@@ -253,3 +253,11 @@ target = NodePath("..")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(2125, 1756)
 polygon = PackedVector2Array(52, -41, -121, -42, -122, 19, 37, 25, 208, 21, 205, -37)
+
+[node name="Audio_pasos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yfqt6")
+volume_db = -6.559
+pitch_scale = 1.03
+parameters/looping = true
+
+[node name="GlobalAudio" parent="." instance=ExtResource("8_fmevp")]

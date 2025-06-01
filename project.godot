@@ -22,6 +22,7 @@ Funciones="*res://funciones.gd"
 Dialogos="*res://dialogos.gd"
 estado_juego="*res://estado_juego.gd"
 GlobalSave="*res://GLOBAL_SAVE.gd"
+GLOBALAUDIO="*res://GlobalAudio.gd"
 
 [display]
 

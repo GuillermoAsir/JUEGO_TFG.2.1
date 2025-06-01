@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://dbihv8gwbyfi2"]
+[gd_scene load_steps=36 format=3 uid="uid://dbihv8gwbyfi2"]
 
 [ext_resource type="Script" uid="uid://ct16x6qqqf4x0" path="res://Scenes/Personajes/chica.gd" id="1_7pm0j"]
 [ext_resource type="Texture2D" uid="uid://r0urc3tgw2fo" path="res://Assest/Sprite_personajes/Chica/chica frente.png" id="1_xtdmr"]
 [ext_resource type="Texture2D" uid="uid://dptvwj0507s55" path="res://Assest/Sprite_personajes/Chica/chica reposo.png" id="2_7pm0j"]
 [ext_resource type="Texture2D" uid="uid://bic1njur8lskl" path="res://Assest/Sprite_personajes/Chica/chica anda.png" id="3_wwhae"]
 [ext_resource type="Texture2D" uid="uid://bueuqlywiiq4x" path="res://Assest/Sprite_personajes/Chica/chica espalda.png" id="4_ampsb"]
+[ext_resource type="AudioStream" uid="uid://b2t6xia384uee" path="res://Music/Personajes/efectos/pasos_largos.ogg" id="6_wwhae"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqlc7"]
 atlas = ExtResource("1_xtdmr")
@@ -249,3 +250,7 @@ editor_draw_drag_margin = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(780, 881, 780, 983, 1168, 983, 1167, 888)
+
+[node name="Audio_pasos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wwhae")
+parameters/looping = true
