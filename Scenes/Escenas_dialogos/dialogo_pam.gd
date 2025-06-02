@@ -25,8 +25,8 @@ func _ready():
 	timer_ocultar.connect("timeout", Callable(self, "_on_Timer_timeout"))
 
 	# Llamar automáticamente al método _set_texto() con un texto predeterminado
-	_set_texto("Hola veo que eres en nuevo/a chico/a de prácticas mi nombre es Pam y me puedes preguntar lo que quieras.
-	 Date prisa! Maestro Byteyagi te está esperando..")
+	_set_texto("Hola, veo que eres el nuevo de prácticas. Mi nombre es Pam, y puedes preguntarme lo que quieras.
+	 ¡Date prisa! El maestro Byteyagi te está esperando...")
 
 # Método para iniciar el diálogo
 func _set_texto(value):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6rrjvfubobu8"]
+[gd_scene load_steps=12 format=3 uid="uid://c6rrjvfubobu8"]
 
 [ext_resource type="Texture2D" uid="uid://ckjrsu4f5ev1y" path="res://Assest/ESCENARIOS/Partes despacho/Escritorio_desktop.png" id="1_paq6n"]
 [ext_resource type="Texture2D" uid="uid://dwogaekx6j142" path="res://Assest/ESCENARIOS/Partes despacho/pantalla pc.png" id="2_7ruv4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dmfpd52s7541f" path="res://Scenes/Escenarios/volver_despacho.gd" id="5_lrlio"]
 [ext_resource type="AudioStream" uid="uid://b5pxm4up6d735" path="res://Music/Music_escenarios/musica-despacho-8bit.mp3" id="6_dc2si"]
 [ext_resource type="Script" uid="uid://lw4vmx2kbmim" path="res://Scenes/Escenarios/mute.gd" id="6_ydpdj"]
+[ext_resource type="PackedScene" uid="uid://c8dp1emdnevwo" path="res://Scenes/Music_Scenes/global_audio.tscn" id="8_qhbxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okcyh"]
 size = Vector2(17.5, 16.5)
@@ -72,6 +73,8 @@ stream = ExtResource("6_dc2si")
 volume_db = -21.835
 autoplay = true
 parameters/looping = true
+
+[node name="GlobalAudio" parent="." instance=ExtResource("8_qhbxt")]
 
 [connection signal="input_event" from="CambiarCamara" to="CambiarCamara" method="_on_input_event"]
 [connection signal="input_event" from="CambiarTerminal" to="CambiarTerminal" method="_on_input_event"]

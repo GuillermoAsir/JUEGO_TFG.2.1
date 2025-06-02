@@ -16,9 +16,9 @@ var indice_fragmento: int = 0
 
 
 # Diálogos incrustados directamente en el script
-const DIALOGO_BYTEYAGI_1 := """Carambita carambola, ya tenemos aquí al chico/a de prácticas. Me presento, mi nombre es Maestro Byteyagi
-y llevo en esta empresa más de 35 años.En mis tiempos usábamos como tecnología a una médium y a una tabla ouija.
-Yo seré tu maestro Yoga, tu Iruka Umino, tu maestro Mutenroshi. Te guiaré por la senda de la sabiduría.
+const DIALOGO_BYTEYAGI_1 := """¡Carambita, carambola! Ya tenemos aquí al chico/a de prácticas. Me presento, mi nombre es Maestro Byteyagi
+llevo en esta empresa más de 35 años. En mis tiempos, la tecnología se basaba en una médium y una tabla ouija.
+Seré tu maestro Yoga, tu Iruka Umino, tu maestro Mutenroshi. Te guiaré por la senda de la sabiduría.
 Serás mi discípulo, y si tienes alguna duda, aprovecha porque en unos meses me jubilo.
 Bueno, empecemos por lo más básico: te explicaré la estructura de esta empresa. En esta empresa tenemos 
 a la encantadora recepcionista Pam, a ella le puedes preguntar si te llegó alguna incidencia. Luego tenemos el departamento 

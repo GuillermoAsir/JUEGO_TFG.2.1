@@ -25,12 +25,12 @@ func _ready():
 	timer_ocultar.connect("timeout", Callable(self, "_on_Timer_timeout"))
 
 	# Llamar automáticamente al método _set_texto() con un texto predeterminado
-	_set_texto("Hola, usuario nos alegra mucho que hayas elegido Cyberdyne Systems para realizar tus prácticas, 
-	aquí te formaremos lo mejor posible para que des tu salto al mundo laboral. En esta empresa no escatimamos 
-	en gastos. Hoy empezaras con el maestro Byteyagi, se llama Juan, pero quiere que le llamemos así...
-	él te ira guiando en lo que necesites, dirígete hacia tu oficina veras una placa que pone Informática. 
-	Espero que disfrutes del ambiente laboral. Me tienes para lo que necesitas soy Rosa Melano 
-	de Recursos Humanos.")
+	_set_texto("Hola, usuario. Nos alegra mucho que hayas elegido Cyberdyne Systems para realizar tus prácticas. 
+	Aquí te formaremos de la mejor manera posible para que des el salto al mundo laboral. En esta empresa no escatimamos 
+	en gastos. Hoy empezarás con el maestro Byteyagi. Su nombre es Juan, pero prefiere que lo llamemos así...
+	Él te irá guiando en lo que necesites. Dirígete a tu oficina, donde verás una placa que dice Informática
+	Espero que disfrutes del ambiente laboral. Estoy aquí para lo que necesites; soy Rosa Melano, de Recursos Humanos.
+	")
 
 # Método para iniciar el diálogo
 func _set_texto(value):

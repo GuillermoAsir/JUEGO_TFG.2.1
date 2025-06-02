@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://s5olytk7wmkw"]
+[gd_scene load_steps=37 format=3 uid="uid://s5olytk7wmkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4g8dahiygbdc" path="res://Assest/Sprite_personajes/Chico/chico frente.png" id="1_4sx1l"]
 [ext_resource type="Script" uid="uid://ddvihcc4wj1ek" path="res://Scenes/Personajes/chico.gd" id="1_d5qxt"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dit0fbdh6a2mu" path="res://Assest/Sprite_personajes/Chico/chico espalda.png" id="4_yfqt6"]
 [ext_resource type="Script" uid="uid://cdcfv81qhrtww" path="res://Scenes/Personajes/camera_chico.gd" id="6_yo44m"]
 [ext_resource type="AudioStream" uid="uid://b2t6xia384uee" path="res://Music/Personajes/efectos/pasos_largos.ogg" id="7_yfqt6"]
-[ext_resource type="PackedScene" uid="uid://c8dp1emdnevwo" path="res://Scenes/Music_Scenes/global_audio.tscn" id="8_fmevp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmevp"]
 atlas = ExtResource("1_4sx1l")
@@ -259,5 +258,3 @@ stream = ExtResource("7_yfqt6")
 volume_db = -6.559
 pitch_scale = 1.03
 parameters/looping = true
-
-[node name="GlobalAudio" parent="." instance=ExtResource("8_fmevp")]

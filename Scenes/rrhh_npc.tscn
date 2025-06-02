@@ -305,8 +305,8 @@ polygon = PackedVector2Array(117, 475, 279, 550, 63, 560)
 position = Vector2(146.5, 219.75)
 scale = Vector2(0.63375, 0.63375)
 sprite_frames = SubResource("SpriteFrames_stdms")
-animation = &"appear"
-autoplay = "idle"
+animation = &"idle"
+autoplay = "appear"
 metadata/_edit_group_ = true
 
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]
