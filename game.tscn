@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnyfgnkbfuxen"]
+[gd_scene load_steps=15 format=3 uid="uid://bnyfgnkbfuxen"]
 
 [ext_resource type="Script" uid="uid://cemyij6msbtc3" path="res://terminal.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bqtv2oh2e67vs" path="res://dialog_box.gd" id="2_e2o6t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c7dd01ua7sw78" path="res://volver_escritorio.gd" id="6_ryrav"]
 [ext_resource type="AudioStream" uid="uid://d1fkva7ullx46" path="res://Music/Music_misiones/musica-batalla-8bit.mp3" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c8dp1emdnevwo" path="res://Scenes/Music_Scenes/global_audio.tscn" id="8_j5wjh"]
+[ext_resource type="AudioStream" uid="uid://bkbwtedsr0fyc" path="res://Music/Personajes/efectos/sonido de ventilador.mp3" id="9_vef74"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
 bg_color = Color(0.466667, 0.129412, 0.435294, 1)
@@ -174,6 +175,12 @@ autoplay = true
 parameters/looping = true
 
 [node name="GlobalAudio" parent="." instance=ExtResource("8_j5wjh")]
+
+[node name="SonidoDeVentilador" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vef74")
+volume_db = -19.349
+autoplay = true
+parameters/looping = true
 
 [connection signal="input_event" from="TerminalZoom" to="TerminalZoom" method="_on_terminal_zoom_input_event"]
 [connection signal="input_event" from="VolverEscritorio" to="VolverEscritorio" method="_on_input_event"]
