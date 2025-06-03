@@ -10,10 +10,13 @@ script = ExtResource("1_qx1fc")
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qx1fc")
+volume_db = -18.617
 
 [node name="Timbre2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3h3sp")
+volume_db = -18.572
 
 [node name="MaquinaEscribir" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3h3sp")
+volume_db = -16.715
 autoplay = true
