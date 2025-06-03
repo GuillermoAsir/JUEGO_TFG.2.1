@@ -29,8 +29,19 @@ func _physics_process(delta):
 		is_playing_steps = false
 		return
 
-	var dir_x = Input.get_axis("ui_left", "ui_right")
-	var dir_y = Input.get_axis("ui_up", "ui_down")
+	# Control con W, A, S, D
+	var dir_x = 0
+	if Input.is_key_pressed(KEY_A):
+		dir_x = -1
+	elif Input.is_key_pressed(KEY_D):
+		dir_x = +1
+
+	var dir_y = 0
+	if Input.is_key_pressed(KEY_W):
+		dir_y = -1
+	elif Input.is_key_pressed(KEY_S):
+		dir_y = +1
+
 	var direction = Vector2(dir_x, dir_y).normalized()
 
 	velocity = direction * SPEED
@@ -85,7 +96,6 @@ func bloquear_movimiento():
 	puede_moverse = false
 	audio_pasos.stop()
 	is_playing_steps = false
-
 
 func desbloquear_movimiento():
 	puede_moverse = true

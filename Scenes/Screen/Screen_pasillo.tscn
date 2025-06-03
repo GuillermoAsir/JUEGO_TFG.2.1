@@ -712,7 +712,6 @@ script = ExtResource("1_l1ojw")
 position = Vector2(1911, 1074)
 
 [node name="RRHH_ANIMACION" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(3173, 1641)
 scale = Vector2(0.596042, 0.596042)
 sprite_frames = SubResource("SpriteFrames_l1ojw")
@@ -728,12 +727,11 @@ position = Vector2(3726.25, 1705.25)
 scale = Vector2(0.665937, 0.665937)
 sprite_frames = SubResource("SpriteFrames_odoh5")
 animation = &"talk"
-autoplay = "talk"
 
 [node name="chico" parent="." instance=ExtResource("2_36h4e")]
 light_mask = 16
 visibility_layer = 16
-position = Vector2(75, 202)
+position = Vector2(-13, 270)
 
 [node name="cam_pasillo" type="Camera2D" parent="chico"]
 position = Vector2(307, 1356)
@@ -805,11 +803,10 @@ root_node = NodePath("../InicioPam")
 libraries = {
 &"": SubResource("AnimationLibrary_l1ojw")
 }
-autoplay = "hablar_pam"
 
 [node name="InicioPam" type="Area2D" parent="."]
 script = ExtResource("11_odoh5")
-anim_player_path = NodePath("../AnimationPlayerPam")
+animation_player_path = NodePath("../AnimationPlayerPam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InicioPam"]
 position = Vector2(3725, 1587)
@@ -834,3 +831,5 @@ autoplay = true
 [connection signal="animation_finished" from="AnimationPlayerRRHH" to="IniciaRhh" method="_on_animation_player_rrhh_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayerPam" to="InicioPam" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="InicioPam" to="InicioPam" method="_on_body_entered"]
+[connection signal="input_event" from="InicioPam" to="InicioPam" method="_on_input_event"]
+[connection signal="ready" from="InicioPam" to="InicioPam" method="_ready"]
