@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://cji6pw5mjes1q"]
+[gd_scene load_steps=84 format=3 uid="uid://cji6pw5mjes1q"]
 
 [ext_resource type="Script" uid="uid://cqrvpgnojs8q7" path="res://Scenes/Screen/screen_despacho.gd" id="1_h7j14"]
 [ext_resource type="PackedScene" uid="uid://bjx04ojbedswp" path="res://Scenes/Escenarios/despacho.tscn" id="1_oncvu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://d28o2spsfa18k" path="res://Scenes/Screen/volver_pasillo.gd" id="4_2e4kn"]
 [ext_resource type="Texture2D" uid="uid://dfmaovwi5s76q" path="res://Assest/Parallax/nubes.png" id="4_6v8p6"]
 [ext_resource type="Script" uid="uid://bwwd677i67y55" path="res://Scenes/Screen/entrar_pc.gd" id="5_akcg4"]
+[ext_resource type="Texture2D" uid="uid://rpgr0mo100lt" path="res://Assest/Sprite_personajes/cositas.png" id="5_f4pn5"]
 [ext_resource type="Texture2D" uid="uid://be5gtljpxb0w5" path="res://Assest/Sprite_personajes/viejo/viejo_reposo.png" id="7_cwuaf"]
 [ext_resource type="Texture2D" uid="uid://cocj1a0wulsi1" path="res://Assest/Sprite_personajes/viejo/viejo_peo.png" id="8_4onwe"]
 [ext_resource type="Texture2D" uid="uid://ca4oolg30yrnn" path="res://Assest/Sprite_personajes/viejo/viejo_camina_1080.png" id="9_h7j14"]
@@ -674,10 +675,22 @@ tracks/6/keys = {
 "update": 1,
 "values": [ExtResource("4_6v8p6")]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Cositas:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(591, 560)]
+}
 
 [sub_resource type="Animation" id="Animation_iflxp"]
 resource_name = "fondo_animado"
-length = 6.0
+length = 60.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -763,6 +776,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [ExtResource("4_6v8p6"), ExtResource("4_6v8p6")]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Cositas:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.63333, 6.56667, 50.6667, 53.3, 57.2333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(591, 560), Vector2(634, 402), Vector2(585, 575), Vector2(591, 560), Vector2(634, 402), Vector2(585, 575)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rroys"]
 _data = {
@@ -794,6 +819,12 @@ frame_progress = 0.855476
 position = Vector2(1461, 175)
 scale = Vector2(3.07031, 3.07031)
 texture = ExtResource("4_6v8p6")
+
+[node name="Cositas" type="Sprite2D" parent="."]
+position = Vector2(591, 560)
+rotation = 0.127409
+scale = Vector2(0.36544, 0.36544)
+texture = ExtResource("5_f4pn5")
 
 [node name="Despacho" parent="." instance=ExtResource("1_oncvu")]
 position = Vector2(-9, 1)
