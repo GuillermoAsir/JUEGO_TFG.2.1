@@ -457,10 +457,22 @@ tracks/8/keys = {
 "update": 1,
 "values": [ExtResource("14_m4aog")]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("chico:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, 270)]
+}
 
 [sub_resource type="Animation" id="Animation_4jmhk"]
 resource_name = "aparición_rrhh"
-length = 28.0
+length = 40.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -576,7 +588,7 @@ tracks/9/path = NodePath("chico")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.566667, 25.7667),
+"times": PackedFloat32Array(0.566667, 34.8333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -585,6 +597,18 @@ tracks/9/keys = {
 "args": [],
 "method": &"desbloquear_movimiento"
 }]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("chico:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 26.4954, 27.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-13, 270), Vector2(-13, 270), Vector2(1308, 288)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4aog"]
@@ -654,7 +678,7 @@ tracks/0/path = NodePath("../Pam:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(27.9, 34.9),
+"times": PackedFloat32Array(27.9667, 34.8333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(3726.25, 1705.25), Vector2(3726.25, 1705.25)]
@@ -690,10 +714,10 @@ tracks/3/path = NodePath("../Dialogo_PAM:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(28.2333, 35.1667),
+"times": PackedFloat32Array(0, 34.9333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2966, 1072), Vector2(2966, 1072)]
+"values": [Vector2(2361, 1064), Vector2(2361, 1064)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l1ojw"]
@@ -807,9 +831,9 @@ autoplay = "hablar_pam"
 
 [node name="InicioPam" type="Area2D" parent="."]
 script = ExtResource("11_odoh5")
-animation_player_path = NodePath("../AnimationPlayerPam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InicioPam"]
+visible = false
 position = Vector2(3725, 1587)
 shape = SubResource("RectangleShape2D_4jmhk")
 
